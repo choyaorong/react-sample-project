@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import Pagination from '../Layout/Pagination';
 import Card from '../UI/Card';
 import ingredientsAPI from '../api/baseApi';
-import styles from './Catalogue.module.css';
 import Product from './Product';
+import styles from './Receipe.module.css';
 
 
 function Catalogue() {
@@ -11,7 +11,7 @@ function Catalogue() {
   const [searchQuery, setSearchQuery] = useState(''); // Add search query state
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(8); // Number of items to display per page
-  const [nextPageLink, setNextPageLink] = useState('food-database/v2/parser');
+  const [nextPageLink, setNextPageLink] = useState('recipes/v2');
 
   const apiGet = async () => {
     try {
@@ -19,8 +19,8 @@ function Catalogue() {
       const response = await ingredientsAPI.get(nextPageLink, {
         params: {
           session: 0,
-          app_id: process.env.REACT_APP_FOOD_APP_ID,
-          app_key: process.env.REACT_APP_FOOD_APP_KEY,
+          app_id: process.env.REACT_APP_RECEIPE_APP_ID,
+          app_key: process.env.REACT_APP_RECEIPE_APP_KEY,
           ingr: searchQuery, // Add the search query as a parameter
         }
       });
@@ -47,7 +47,7 @@ function Catalogue() {
 
   const catalogue = ingredients.map(item => (
     <Product
-      key={item.food.foodId}
+      key={item.receipe.foodId}
       id={item.food.foodId}
       name={item.food.label}
       energy={item.food.nutrients.ENERC_KCAL}
@@ -82,7 +82,7 @@ function Catalogue() {
         <div>
           <input
             type="text"
-            placeholder="Search for ingredients..."
+            placeholder="Search for Receipes..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />

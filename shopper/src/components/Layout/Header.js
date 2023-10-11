@@ -1,12 +1,12 @@
-import styles from './Header.module.css'
+import bannerImage from '../../assets/refrigeratror-with-groceries.png';
 import CartButton from './CartButton';
-import bannerImage from '../../assets/shopping-cart.png';
+import styles from './Header.module.css';
 
 function Header({ onShowCart }) {
   return (
     <>
       <header className={styles.header}>
-        <h1>Super Shopper</h1>
+        <h1>Free My Fridge</h1>
         <CartButton onClick={onShowCart} />
       </header>
       <div className={styles.mainImage}>

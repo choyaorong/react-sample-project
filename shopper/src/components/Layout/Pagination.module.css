@@ -1,0 +1,22 @@
+/* Pagination container */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Pagination buttons */
+.pagination button {
+    padding: 8px 12px;
+    margin: 4px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Active page button */
+.pagination button.active {
+    background-color: #0056b3;
+}

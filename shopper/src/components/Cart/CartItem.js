@@ -6,7 +6,7 @@ const CartItem = ({ price, name, quantity, onRemove, onAdd }) => {
       <div>
         <h2>{name}</h2>
         <div className={styles.summary}>
-          <span className={styles.price}>{`$${price.toFixed(2)}`}</span>
+          {/* <span className={styles.price}>{`$${price.toFixed(2)}`}</span> */}
           <span className={styles.quantity}>x {quantity}</span>
         </div>
       </div>

@@ -12,7 +12,7 @@ function CartButton({ onClick }) {
   return (
     <button className={styles.button} onClick={onClick}>
       <span className={styles.icon}>🛒</span>
-      <span>Your Cart</span>
+      <span>My Fridge</span>
       <span className={styles.badge}>{numItems}</span>
     </button>
   )
